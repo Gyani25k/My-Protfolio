@@ -106,14 +106,20 @@ function openProjectModal(projectId) {
   `;
   
   modal.classList.add('project-modal--active');
+  // Prevent body scroll on mobile
   document.body.style.overflow = 'hidden';
+  document.body.style.position = 'fixed';
+  document.body.style.width = '100%';
 }
 
 // Close project modal
 function closeProjectModal() {
   const modal = document.getElementById('projectModal');
   modal.classList.remove('project-modal--active');
+  // Restore body scroll
   document.body.style.overflow = '';
+  document.body.style.position = '';
+  document.body.style.width = '';
 }
 
 // Initialize when DOM is ready
